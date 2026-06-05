@@ -53,6 +53,14 @@ class ShareManager {
       .replaceAll("'", '&#39;');
   }
 
+  getBillNote(bill) {
+    return String(bill?.billNote || bill?.note || '').trim();
+  }
+
+  formatMultilineHtml(value) {
+    return this.escapeHtml(value).replace(/\r?\n/g, '<br>');
+  }
+
   isIOS() {
     const ua = navigator.userAgent || '';
     const isAppleMobile = /iPad|iPhone|iPod/.test(ua);
@@ -252,17 +260,14 @@ class ShareManager {
     gap: 12px;
     margin-bottom: 12mm;
   }
-  .brand-mark {
-    display: inline-grid;
-    place-items: center;
-    width: 14mm;
-    height: 14mm;
+  .brand-logo {
+    display: block;
+    width: 18mm;
+    height: 18mm;
+    border: 1px solid rgba(45, 64, 89, 0.18);
     border-radius: 4mm;
-    background: #e87517;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
+    background: #2d4059;
+    object-fit: cover;
   }
   .brand-name {
     color: #050505;
@@ -349,6 +354,22 @@ class ShareManager {
   }
   .invoice-table .num {
     text-align: right;
+  }
+  .invoice-note {
+    margin: -2mm 0 10mm;
+    padding: 5mm 6mm;
+    border-left: 2mm solid #e87517;
+    background: #f7f4ea;
+    color: #111;
+  }
+  .invoice-note .section-label {
+    margin-bottom: 2mm;
+    font-size: 13px;
+  }
+  .invoice-note-text {
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
   }
   .payment-summary-grid {
     display: grid;
@@ -548,6 +569,8 @@ class ShareManager {
     text += `Customer: ${b.customerName}\n`;
     if (b.customerPhone) text += `Phone: ${b.customerPhone}\n`;
     if (b.customerAddress) text += `Address: ${b.customerAddress}\n`;
+    const billNote = this.getBillNote(b);
+    if (billNote) text += `Note: ${billNote}\n`;
     text += `--------------------\n`;
     b.items.forEach((i) => {
       const unit = i.unit ? ` ${i.unit}` : '';
@@ -606,6 +629,14 @@ class ShareManager {
     const customer = this.escapeHtml(b.customerName || 'Walk-in Customer');
     const phone = this.escapeHtml(b.customerPhone || '');
     const address = this.escapeHtml(b.customerAddress || '');
+    const billNote = this.getBillNote(b);
+    const billNoteHtml = billNote
+      ? `
+      <section class="invoice-note">
+        <h2 class="section-label">Bill Note</h2>
+        <div class="invoice-note-text">${this.formatMultilineHtml(billNote)}</div>
+      </section>`
+      : '';
 
     const itemsRows = (b.items || []).map((item) => {
       const name = this.escapeHtml(item.name);
@@ -701,7 +732,7 @@ class ShareManager {
       <h1 class="invoice-title">Invoice</h1>
 
       <div class="brand-row">
-        <div class="brand-mark">CP</div>
+        <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
@@ -733,6 +764,8 @@ class ShareManager {
           ${itemsRows || '<tr><td colspan="4">No items</td></tr>'}
         </tbody>
       </table>
+
+      ${billNoteHtml}
 
       <section class="payment-summary-grid">
         <div class="payment-method">
@@ -895,7 +928,7 @@ class ShareManager {
     <div class="invoice-content">
       <h1 class="invoice-title">Order</h1>
       <div class="brand-row">
-        <div class="brand-mark">CP</div>
+        <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
@@ -1003,4 +1036,3 @@ class ShareManager {
 }
 
 window.share = new ShareManager();
-

@@ -292,7 +292,7 @@ class CollectionPage {
     <div class="invoice-content">
       <h1 class="invoice-title">Receipt</h1>
       <div class="brand-row">
-        <div class="brand-mark">CP</div>
+        <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">C Plus Tech Pvt Ltd</div>

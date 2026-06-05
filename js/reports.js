@@ -730,7 +730,7 @@ class ReportsView {
           <div class="invoice-content">
             <h1 class="invoice-title">Order</h1>
             <div class="brand-row">
-              <div class="brand-mark">CP</div>
+              <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
               <div>
                 <div class="brand-name">C Plus</div>
                 <div class="brand-sub">${esc(business.businessName || 'C Plus Tech Pvt Ltd')}</div>
@@ -2097,6 +2097,4 @@ class ReportsView {
 }
 
 window.reportsView = new ReportsView();
-
-
 

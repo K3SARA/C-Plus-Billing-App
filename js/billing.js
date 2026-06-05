@@ -52,6 +52,7 @@ class Billing {
 
   _hasUnsavedWork() {
     if (this.editBillId) return true;
+    if ((document.getElementById('bill-note')?.value || '').trim()) return true;
     if (!this.items || this.items.length === 0) return false;
     return this.items.some((item) => item.name && String(item.name).trim());
   }
@@ -1087,6 +1088,10 @@ class Billing {
     return items.filter((i) => !i.name || (Number(i.qty) || 0) <= 0);
   }
 
+  getBillNote() {
+    return (document.getElementById('bill-note')?.value || '').trim();
+  }
+
   async saveCollectingOrder(printWindow = null) {
     const mappedItems = this.mapItemsForCollectingOrder();
     const invalidItems = this.getInvalidCollectingOrderItems(mappedItems);
@@ -1228,6 +1233,8 @@ class Billing {
     document.getElementById('customer-name').value = bill.customerName || '';
     document.getElementById('customer-phone').value = bill.customerPhone || '';
     document.getElementById('customer-address').value = bill.customerAddress || '';
+    const billNoteInput = document.getElementById('bill-note');
+    if (billNoteInput) billNoteInput.value = bill.billNote || bill.note || '';
     const existingPayments = this.getBillPayments(bill);
     const chequePayment = existingPayments.find((payment) => payment.method === 'cheque');
     const hasChequeDetails = Boolean(
@@ -1262,6 +1269,7 @@ class Billing {
     if (this.items.length === 0) this.addItem();
     else this.renderItems();
 
+    this.applyBillingModeUI();
     this.toggleChequeDetails();
     this.updatePaymentSummary();
     this.renderOutstandingHint(document.getElementById('customer-name').value || '');
@@ -1280,6 +1288,8 @@ class Billing {
     document.getElementById('customer-name').value = '';
     document.getElementById('customer-phone').value = '';
     document.getElementById('customer-address').value = '';
+    const billNoteInput = document.getElementById('bill-note');
+    if (billNoteInput) billNoteInput.value = '';
     document.getElementById('received-amount').value = '';
     document.getElementById('payment-method').value = 'cash';
     document.getElementById('payment-method').disabled = false;
@@ -1335,6 +1345,7 @@ class Billing {
 
     const customerPhone = document.getElementById('customer-phone').value.trim();
     const customerAddress = document.getElementById('customer-address').value.trim();
+    const billNote = this.getBillNote();
     const payments = this.normalizePaymentRowsForSave();
     if (!this.validatePaymentRows(payments)) return;
     const primaryPayment = this.getPrimaryPaymentFields(payments);
@@ -1359,6 +1370,7 @@ class Billing {
       customerName,
       customerPhone,
       customerAddress,
+      billNote,
       items: mappedItems,
       total,
       paymentMethod,

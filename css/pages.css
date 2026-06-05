@@ -200,6 +200,16 @@
   margin-top: 10px !important;
 }
 
+.billing-note-card {
+  margin-top: 10px !important;
+}
+
+.bill-note-input {
+  min-height: 88px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
 .billing-payment-card .split-payment-add {
   min-height: 42px;
   margin: 2px 0 12px;
@@ -1850,9 +1860,12 @@ body.side-menu-ready .page:not(.active):not(#login-page) {
 #login-page img.logo {
   width: 104px;
   height: 104px;
+  padding: 0;
+  background: #2d4059;
   border: 1px solid rgba(5, 199, 217, 0.36);
   border-radius: 18px;
   box-shadow: var(--shadow-raised), 0 0 34px rgba(5, 199, 217, 0.22);
+  object-fit: cover;
 }
 
 #login-page .card {
