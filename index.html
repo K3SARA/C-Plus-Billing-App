@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="C Plus Tech" />
 
-    <link rel="manifest" href="./manifest.json?v=121" />
+    <link rel="manifest" href="./manifest.json?v=122" />
     <link rel="icon" href="./icons/logo.png" />
     <link rel="apple-touch-icon" href="./icons/logo.png" />
 
@@ -21,10 +21,10 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/variables.css?v=121" />
-    <link rel="stylesheet" href="css/base.css?v=121" />
-    <link rel="stylesheet" href="css/components.css?v=121" />
-    <link rel="stylesheet" href="css/pages.css?v=121" />
+    <link rel="stylesheet" href="css/variables.css?v=122" />
+    <link rel="stylesheet" href="css/base.css?v=122" />
+    <link rel="stylesheet" href="css/components.css?v=122" />
+    <link rel="stylesheet" href="css/pages.css?v=122" />
   </head>
   <body>
     <div id="app">
@@ -1037,24 +1037,25 @@
       </div>
     </div>
 
-    <script src="js/db.js?v=121"></script>
-    <script src="js/auth.js?v=121"></script>
-    <script src="js/billing.js?v=121"></script>
-    <script src="js/history.js?v=121"></script>
-    <script src="js/customers.js?v=121"></script>
-    <script src="js/collection.js?v=121"></script>
-    <script src="js/expenses.js?v=121"></script>
-    <script src="js/pdf.js?v=121"></script>
-    <script src="js/reports.js?v=121"></script>
-    <script src="js/inventory.js?v=121"></script>
-    <script src="js/share.js?v=121"></script>
-    <script src="js/clear-inputs.js?v=121"></script>
-    <script src="js/app.js?v=121"></script>
+    <script src="js/db.js?v=122"></script>
+    <script src="js/remote-sync.js?v=122"></script>
+    <script src="js/auth.js?v=122"></script>
+    <script src="js/billing.js?v=122"></script>
+    <script src="js/history.js?v=122"></script>
+    <script src="js/customers.js?v=122"></script>
+    <script src="js/collection.js?v=122"></script>
+    <script src="js/expenses.js?v=122"></script>
+    <script src="js/pdf.js?v=122"></script>
+    <script src="js/reports.js?v=122"></script>
+    <script src="js/inventory.js?v=122"></script>
+    <script src="js/share.js?v=122"></script>
+    <script src="js/clear-inputs.js?v=122"></script>
+    <script src="js/app.js?v=122"></script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("./sw.js?v=121")
+            .register("./sw.js?v=122")
             .then((reg) => {
               console.log("SW registered:", reg.scope);
             })
