@@ -1,0 +1,16 @@
+{
+  "name": "C Plus Tech Billing",
+  "short_name": "C Plus Tech",
+  "description": "Offline-first billing, stock, and customer dues app for a tech shop.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a84ff",
+  "icons": [
+    {
+      "src": "./icons/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

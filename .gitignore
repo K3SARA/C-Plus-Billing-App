@@ -1,0 +1,9 @@
+node_modules/
+test-results/
+playwright-report/
+.codex-logs/
+test-output.txt
+test-results.txt
+*.log
+.DS_Store
+Thumbs.db
