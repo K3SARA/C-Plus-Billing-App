@@ -31,6 +31,7 @@ class App {
     if (window.expensesPage) window.expensesPage.init();
     if (window.clearInputs) window.clearInputs.init();
     this.bindSideMenu();
+    this.bindNumberInputWheelGuard();
     this.bindBackupButtons();
     this.updateBackupReminder();
     this.isReady = true;
@@ -46,6 +47,10 @@ class App {
   navigate(pageId) {
     if (pageId !== 'login' && window.auth && !window.auth.isAuthenticated) {
       pageId = 'login';
+    }
+
+    if (pageId === 'login') {
+      this.clearLoginBlockers();
     }
 
     document.querySelectorAll('.page').forEach(page => {
@@ -121,6 +126,18 @@ class App {
     }
   }
 
+  bindNumberInputWheelGuard() {
+    if (this.numberWheelGuardBound) return;
+    this.numberWheelGuardBound = true;
+
+    document.addEventListener('wheel', (event) => {
+      const input = event.target?.closest?.('input[type="number"]');
+      if (!input || document.activeElement !== input) return;
+
+      event.preventDefault();
+    }, { capture: true, passive: false });
+  }
+
   isWideLayout() {
     return window.matchMedia('(min-width: 901px)').matches;
   }
@@ -165,6 +182,26 @@ class App {
     const showBackdrop = showMenu && this.sideMenuExpanded && !this.isWideLayout();
     backdrop?.classList.toggle('hidden', !showBackdrop);
     backdrop?.classList.toggle('active', showBackdrop);
+  }
+
+  clearLoginBlockers() {
+    document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+      modal.classList.remove('active');
+    });
+
+    const backdrop = document.getElementById('side-menu-backdrop');
+    const sideNav = document.getElementById('side-nav');
+    const toggle = document.getElementById('side-menu-toggle');
+
+    backdrop?.classList.add('hidden');
+    backdrop?.classList.remove('active');
+    sideNav?.classList.add('hidden');
+    sideNav?.classList.remove('is-expanded', 'is-collapsed');
+    toggle?.classList.add('hidden');
+    toggle?.setAttribute('aria-expanded', 'false');
+
+    document.body.classList.remove('side-menu-ready', 'side-menu-expanded');
+    this.sideMenuExpanded = false;
   }
 
   bindBackupButtons() {

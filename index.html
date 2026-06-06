@@ -12,26 +12,26 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="C Plus Tech" />
 
-    <link rel="manifest" href="./manifest.json?v=124" />
-    <link rel="icon" href="./icons/logo.png?v=124" />
-    <link rel="apple-touch-icon" href="./icons/logo.png?v=124" />
+    <link rel="manifest" href="./manifest.json?v=130" />
+    <link rel="icon" href="./icons/logo.png?v=130" />
+    <link rel="apple-touch-icon" href="./icons/logo.png?v=130" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/variables.css?v=124" />
-    <link rel="stylesheet" href="css/base.css?v=124" />
-    <link rel="stylesheet" href="css/components.css?v=124" />
-    <link rel="stylesheet" href="css/pages.css?v=124" />
+    <link rel="stylesheet" href="css/variables.css?v=130" />
+    <link rel="stylesheet" href="css/base.css?v=130" />
+    <link rel="stylesheet" href="css/components.css?v=130" />
+    <link rel="stylesheet" href="css/pages.css?v=130" />
   </head>
   <body>
     <div id="app">
       <!-- Login Page -->
       <div id="login-page" class="page">
         <div class="logo-container">
-          <img src="icons/logo.png?v=124" alt="C Plus Tech Logo" class="logo" />
+          <img src="icons/logo.png?v=130" alt="C Plus Tech Logo" class="logo" />
           <h1>C Plus Tech</h1>
           <p style="color: var(--text-muted); margin-top: 8px">
             Billing Desk
@@ -120,7 +120,7 @@
       <div id="billing-page" class="page">
         <header class="top-header">
           <h1>
-            <img src="icons/logo.png?v=124" alt="C Plus Tech Logo" class="logo" />
+            <img src="icons/logo.png?v=130" alt="C Plus Tech Logo" class="logo" />
             C Plus Tech Billing
           </h1>
           <div class="header-actions">
@@ -824,7 +824,7 @@
       ></div>
       <nav class="side-nav hidden" id="side-nav" aria-label="Main menu">
         <div class="side-nav-brand">
-          <img src="icons/logo.png?v=124" alt="" class="side-nav-logo" />
+          <img src="icons/logo.png?v=130" alt="" class="side-nav-logo" />
           <div class="side-nav-title">
             <strong>C Plus</strong>
             <span>Tech Billing</span>
@@ -954,6 +954,13 @@
             </button>
             <button
               class="btn-primary"
+              onclick="share.openWaybillModal()"
+              style="margin: 0; background: #2d4059; width: 100%"
+            >
+              Print Waybill
+            </button>
+            <button
+              class="btn-primary"
               onclick="share.viaWhatsApp()"
               style="margin: 0; background: #25d366; width: 100%"
             >
@@ -987,6 +994,68 @@
               Done
             </button>
           </div>
+        </div>
+      </div>
+
+      <div id="waybill-modal" class="modal-overlay">
+        <div class="modal-content">
+          <div class="modal-handle"></div>
+          <h2 style="margin-bottom: 20px; text-align: center">
+            Waybill Details
+          </h2>
+          <div class="waybill-form-grid">
+            <div class="input-group">
+              <label>Delivery Date</label>
+              <input type="date" id="waybill-delivery-date" class="input-field" />
+            </div>
+            <div class="input-group">
+              <label>Vehicle Number</label>
+              <input
+                type="text"
+                id="waybill-vehicle"
+                class="input-field"
+                placeholder="Enter vehicle number"
+              />
+            </div>
+            <div class="input-group">
+              <label>Driver Name</label>
+              <input
+                type="text"
+                id="waybill-driver-name"
+                class="input-field"
+                placeholder="Enter driver name"
+              />
+            </div>
+            <div class="input-group">
+              <label>Driver Phone</label>
+              <input
+                type="tel"
+                id="waybill-driver-phone"
+                class="input-field"
+                placeholder="Enter driver phone"
+              />
+            </div>
+          </div>
+          <button
+            class="btn-primary"
+            onclick="share.printWaybillFromModal()"
+            style="margin: 6px 0 0 0; width: 100%; background: #2d4059"
+          >
+            Print Waybill
+          </button>
+          <button
+            class="btn-primary"
+            onclick="app.closeModal('waybill-modal')"
+            style="
+              margin: 10px 0 0 0;
+              background: none;
+              color: var(--text-main);
+              font-weight: 400;
+              width: 100%;
+            "
+          >
+            Cancel
+          </button>
         </div>
       </div>
 
@@ -1050,25 +1119,25 @@
       </div>
     </div>
 
-    <script src="js/db.js?v=124"></script>
-    <script src="js/remote-sync.js?v=124"></script>
-    <script src="js/auth.js?v=124"></script>
-    <script src="js/billing.js?v=124"></script>
-    <script src="js/history.js?v=124"></script>
-    <script src="js/customers.js?v=124"></script>
-    <script src="js/collection.js?v=124"></script>
-    <script src="js/expenses.js?v=124"></script>
-    <script src="js/pdf.js?v=124"></script>
-    <script src="js/reports.js?v=124"></script>
-    <script src="js/inventory.js?v=124"></script>
-    <script src="js/share.js?v=124"></script>
-    <script src="js/clear-inputs.js?v=124"></script>
-    <script src="js/app.js?v=124"></script>
+    <script src="js/db.js?v=130"></script>
+    <script src="js/remote-sync.js?v=130"></script>
+    <script src="js/auth.js?v=130"></script>
+    <script src="js/billing.js?v=130"></script>
+    <script src="js/history.js?v=130"></script>
+    <script src="js/customers.js?v=130"></script>
+    <script src="js/collection.js?v=130"></script>
+    <script src="js/expenses.js?v=130"></script>
+    <script src="js/pdf.js?v=130"></script>
+    <script src="js/reports.js?v=130"></script>
+    <script src="js/inventory.js?v=130"></script>
+    <script src="js/share.js?v=130"></script>
+    <script src="js/clear-inputs.js?v=130"></script>
+    <script src="js/app.js?v=130"></script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("./sw.js?v=124")
+            .register("./sw.js?v=130")
             .then((reg) => {
               console.log("SW registered:", reg.scope);
             })

@@ -172,7 +172,7 @@ class ShareManager {
     cursor: pointer;
   }
   .screen-actions .back-btn {
-    background: #111;
+    background: #2d4059;
     color: #fff;
   }
   .invoice-page {
@@ -192,7 +192,7 @@ class ShareManager {
     width: 150mm;
     height: 16mm;
     border-bottom-right-radius: 20mm;
-    background: #e87517;
+    background: linear-gradient(90deg, #2d4059 0 72%, #31b9c5 72% 84%, #1978b8 84% 92%, #ef4b9b 92% 97%, #ffd21e 97% 100%);
   }
   .invoice-bottom-accent {
     position: absolute;
@@ -200,7 +200,7 @@ class ShareManager {
     bottom: 0;
     width: 184mm;
     height: 14mm;
-    background: #e87517;
+    background: linear-gradient(90deg, #2d4059 0 48%, #31b9c5 48% 68%, #1978b8 68% 84%, #ef4b9b 84% 94%, #ffd21e 94% 100%);
   }
   .invoice-corner-soft,
   .invoice-corner-fill {
@@ -212,14 +212,14 @@ class ShareManager {
   .invoice-corner-soft {
     width: 26mm;
     height: 26mm;
-    background: #f0ecd8;
+    background: #e8eef5;
   }
   .invoice-corner-fill {
     right: 18mm;
     bottom: 14mm;
     width: 18mm;
     height: 18mm;
-    background: #e87517;
+    background: #31b9c5;
     border-radius: 7mm;
   }
   .invoice-dots {
@@ -228,7 +228,7 @@ class ShareManager {
     right: 12mm;
     width: 43mm;
     height: 38mm;
-    background-image: radial-gradient(circle, #181818 0 1.7mm, transparent 1.8mm);
+    background-image: radial-gradient(circle, #2d4059 0 1.7mm, transparent 1.8mm);
     background-size: 8mm 8mm;
     opacity: 0.96;
   }
@@ -239,7 +239,7 @@ class ShareManager {
     width: 29mm;
     height: 25mm;
     border-radius: 8mm;
-    background: #f0ecd8;
+    background: #edf8fb;
   }
   .invoice-content {
     position: relative;
@@ -247,7 +247,7 @@ class ShareManager {
   }
   .invoice-title {
     margin: 0 0 17mm;
-    color: #181818;
+    color: #2d4059;
     font-size: 44px;
     font-weight: 400;
     letter-spacing: 0.08em;
@@ -270,7 +270,7 @@ class ShareManager {
     object-fit: cover;
   }
   .brand-name {
-    color: #050505;
+    color: #2d4059;
     font-size: 24px;
     font-weight: 800;
     line-height: 1.1;
@@ -290,14 +290,14 @@ class ShareManager {
   .section-label,
   .method-title {
     margin: 0 0 5mm;
-    color: #050505;
+    color: #2d4059;
     font-size: 16px;
     font-weight: 800;
     letter-spacing: 0.03em;
   }
   .customer-name {
     margin: 0 0 4mm;
-    color: #050505;
+    color: #2d4059;
     font-size: 18px;
     font-weight: 800;
   }
@@ -311,7 +311,7 @@ class ShareManager {
   .meta-table {
     width: 100%;
     border-collapse: collapse;
-    color: #050505;
+    color: #2d4059;
     font-size: 17px;
   }
   .meta-table th {
@@ -330,12 +330,12 @@ class ShareManager {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10mm;
-    color: #0f0f0f;
+    color: #111827;
     font-size: 14px;
   }
   .invoice-table th,
   .invoice-table td {
-    border-top: 1.5px solid #202020;
+    border-top: 1.5px solid #2d4059;
     padding: 5mm 4mm;
     vertical-align: top;
   }
@@ -345,7 +345,7 @@ class ShareManager {
     text-align: left;
   }
   .invoice-table tbody tr:last-child td {
-    border-bottom: 1.5px solid #202020;
+    border-bottom: 1.5px solid #2d4059;
   }
   .invoice-table .qty,
   .invoice-table .num {
@@ -358,8 +358,8 @@ class ShareManager {
   .invoice-note {
     margin: -2mm 0 10mm;
     padding: 5mm 6mm;
-    border-left: 2mm solid #e87517;
-    background: #f7f4ea;
+    border-left: 2mm solid #31b9c5;
+    background: #edf8fb;
     color: #111;
   }
   .invoice-note .section-label {
@@ -370,6 +370,51 @@ class ShareManager {
     font-size: 13px;
     line-height: 1.6;
     overflow-wrap: anywhere;
+  }
+  .waybill-info-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12mm;
+    margin-bottom: 12mm;
+  }
+  .waybill-box {
+    min-height: 38mm;
+    padding: 5mm 6mm;
+    border: 1.5px solid #2d4059;
+    color: #111;
+  }
+  .waybill-box-title {
+    margin: 0 0 4mm;
+    color: #2d4059;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .waybill-detail-row {
+    display: grid;
+    grid-template-columns: 34mm minmax(0, 1fr);
+    gap: 4mm;
+    padding: 1.5mm 0;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .waybill-detail-row strong {
+    font-weight: 800;
+  }
+  .waybill-signature-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 18mm;
+    align-items: end;
+    margin-top: 20mm;
+  }
+  .waybill-signature-line {
+    border-top: 1.5px solid #2d4059;
+    padding-top: 4mm;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.02em;
   }
   .payment-summary-grid {
     display: grid;
@@ -396,7 +441,7 @@ class ShareManager {
     gap: 8mm;
     align-items: baseline;
     padding: 2.6mm 0;
-    color: #050505;
+    color: #2d4059;
     font-size: 14px;
   }
   .totals .row span:last-child,
@@ -405,7 +450,7 @@ class ShareManager {
     white-space: nowrap;
   }
   .totals .row.total {
-    border-top: 1.5px solid #202020;
+    border-top: 1.5px solid #2d4059;
     font-size: 22px;
     font-weight: 800;
   }
@@ -429,12 +474,12 @@ class ShareManager {
     margin-top: 11mm;
   }
   .thanks {
-    color: #050505;
+    color: #2d4059;
     font-size: 19px;
     font-weight: 400;
   }
   .signature-line {
-    border-top: 1.5px solid #202020;
+    border-top: 1.5px solid #2d4059;
     padding-top: 4mm;
     text-align: center;
     font-size: 14px;
@@ -462,11 +507,160 @@ class ShareManager {
     place-items: center;
     width: 8mm;
     height: 8mm;
-    border: 1.5px solid #e87517;
+    border: 1.5px solid #31b9c5;
     border-radius: 50%;
-    color: #e87517;
+    color: #31b9c5;
     font-size: 13px;
     line-height: 1;
+  }
+  .invoice-page.invoice-compact {
+    padding: 20mm 16mm 26mm;
+  }
+  .invoice-compact .invoice-top-accent {
+    height: 12mm;
+  }
+  .invoice-compact .invoice-bottom-accent {
+    height: 10mm;
+  }
+  .invoice-compact .invoice-corner-soft {
+    width: 20mm;
+    height: 20mm;
+    bottom: 8mm;
+  }
+  .invoice-compact .invoice-corner-fill {
+    width: 13mm;
+    height: 13mm;
+    right: 18mm;
+    bottom: 12mm;
+  }
+  .invoice-compact .invoice-dots {
+    top: 12mm;
+    right: 10mm;
+    width: 34mm;
+    height: 28mm;
+    background-size: 6mm 6mm;
+  }
+  .invoice-compact .invoice-soft-square {
+    top: 12mm;
+    right: 13mm;
+    width: 23mm;
+    height: 19mm;
+  }
+  .invoice-compact .invoice-title {
+    margin-bottom: 8mm;
+    font-size: 34px;
+  }
+  .invoice-compact .brand-row {
+    margin-bottom: 7mm;
+  }
+  .invoice-compact .brand-logo {
+    width: 14mm;
+    height: 14mm;
+    border-radius: 3mm;
+  }
+  .invoice-compact .brand-name {
+    font-size: 20px;
+  }
+  .invoice-compact .brand-sub {
+    font-size: 11px;
+  }
+  .invoice-compact .invoice-party-grid {
+    grid-template-columns: minmax(0, 1fr) 52mm;
+    gap: 10mm;
+    margin-bottom: 7mm;
+  }
+  .invoice-compact .section-label,
+  .invoice-compact .method-title {
+    margin-bottom: 2mm;
+    font-size: 13px;
+  }
+  .invoice-compact .customer-name {
+    margin-bottom: 1mm;
+    font-size: 15px;
+  }
+  .invoice-compact .customer-lines,
+  .invoice-compact .payment-lines,
+  .invoice-compact .invoice-footer {
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+  .invoice-compact .meta-table {
+    font-size: 13px;
+  }
+  .invoice-compact .meta-table th,
+  .invoice-compact .meta-table td {
+    padding-bottom: 2mm;
+  }
+  .invoice-compact .invoice-table {
+    margin-bottom: 5mm;
+    font-size: 11.5px;
+    line-height: 1.25;
+  }
+  .invoice-compact .invoice-table th,
+  .invoice-compact .invoice-table td {
+    padding: 1.6mm 2.2mm;
+  }
+  .invoice-compact .invoice-table th {
+    font-size: 12px;
+  }
+  .invoice-compact .invoice-note {
+    margin: -1mm 0 5mm;
+    padding: 3mm 4mm;
+  }
+  .invoice-compact .invoice-note .section-label {
+    margin-bottom: 1mm;
+    font-size: 11.5px;
+  }
+  .invoice-compact .invoice-note-text {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .invoice-compact .payment-summary-grid {
+    grid-template-columns: minmax(0, 1fr) 54mm;
+    gap: 10mm;
+    margin-bottom: 5mm;
+  }
+  .invoice-compact .payment-method {
+    padding-top: 1mm;
+  }
+  .invoice-compact .payment-line {
+    grid-template-columns: 26mm minmax(0, 1fr);
+    gap: 4mm;
+    padding: 0.8mm 0;
+  }
+  .invoice-compact .totals .row {
+    gap: 4mm;
+    padding: 1.2mm 0;
+    font-size: 11.5px;
+  }
+  .invoice-compact .totals .row.total {
+    font-size: 16px;
+  }
+  .invoice-compact .detail-row {
+    padding: 0.6mm 0 0.6mm 4mm !important;
+    font-size: 10.5px !important;
+  }
+  .invoice-compact .invoice-closing {
+    gap: 10mm;
+    margin-top: 4mm;
+  }
+  .invoice-compact .thanks {
+    font-size: 15px;
+  }
+  .invoice-compact .signature-line {
+    padding-top: 2.5mm;
+    font-size: 11.5px;
+  }
+  .invoice-compact .invoice-footer {
+    left: 16mm;
+    right: 38mm;
+    bottom: 12mm;
+    gap: 12mm;
+  }
+  .invoice-compact .footer-icon {
+    width: 6mm;
+    height: 6mm;
+    font-size: 10px;
   }
   @media screen {
     body { padding: 18px; }
@@ -485,6 +679,8 @@ class ShareManager {
     }
     .brand-row,
     .invoice-party-grid,
+    .waybill-info-grid,
+    .waybill-signature-grid,
     .payment-summary-grid,
     .invoice-closing {
       grid-template-columns: 1fr;
@@ -637,6 +833,8 @@ class ShareManager {
         <div class="invoice-note-text">${this.formatMultilineHtml(billNote)}</div>
       </section>`
       : '';
+    const itemCount = (b.items || []).length;
+    const densityClass = itemCount >= 8 ? ' invoice-compact' : '';
 
     const itemsRows = (b.items || []).map((item) => {
       const name = this.escapeHtml(item.name);
@@ -720,7 +918,7 @@ class ShareManager {
     <button onclick="editBillInApp()">Edit Bill</button>
     <button class="back-btn" onclick="backToApp()">Back to App</button>
   </div>` : ''}
-  <main class="invoice-page receipt">
+  <main class="invoice-page receipt${densityClass}">
     <div class="invoice-top-accent"></div>
     <div class="invoice-dots"></div>
     <div class="invoice-soft-square"></div>
@@ -732,7 +930,7 @@ class ShareManager {
       <h1 class="invoice-title">Invoice</h1>
 
       <div class="brand-row">
-        <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
+        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
@@ -873,6 +1071,185 @@ class ShareManager {
     }
   }
 
+  getTodayInputDate() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  formatInputDate(value) {
+    const raw = String(value || '').trim();
+    if (!raw) return new Date().toLocaleDateString();
+    const parts = raw.split('-').map((part) => Number(part));
+    if (parts.length !== 3 || parts.some((part) => !Number.isFinite(part))) return raw;
+    return new Date(parts[0], parts[1] - 1, parts[2]).toLocaleDateString();
+  }
+
+  openWaybillModal() {
+    if (!this.currentBill) {
+      alert('No bill selected to create a waybill.');
+      return;
+    }
+
+    const dateInput = document.getElementById('waybill-delivery-date');
+    if (dateInput && !dateInput.value) dateInput.value = this.getTodayInputDate();
+
+    window.app?.closeModal('share-modal');
+    window.app?.openModal('waybill-modal');
+  }
+
+  getWaybillDetailsFromModal() {
+    const deliveryDateInput = document.getElementById('waybill-delivery-date');
+    return {
+      deliveryDate: deliveryDateInput?.value || this.getTodayInputDate(),
+      vehicleNumber: (document.getElementById('waybill-vehicle')?.value || '').trim(),
+      driverName: (document.getElementById('waybill-driver-name')?.value || '').trim(),
+      driverPhone: (document.getElementById('waybill-driver-phone')?.value || '').trim()
+    };
+  }
+
+  printWaybillFromModal() {
+    this.printWaybill(this.getWaybillDetailsFromModal());
+    window.app?.closeModal('waybill-modal');
+  }
+
+  buildWaybillHtml(bill, details = {}) {
+    const b = bill || {};
+    const dateObj = b.timestamp ? new Date(b.timestamp) : new Date();
+    const invoiceNo = this.escapeHtml(b.billNumber || b.id || dateObj.getTime());
+    const customer = this.escapeHtml(b.customerName || 'Walk-in Customer');
+    const phone = this.escapeHtml(b.customerPhone || '');
+    const address = this.escapeHtml(b.customerAddress || '');
+    const deliveryDate = this.escapeHtml(this.formatInputDate(details.deliveryDate));
+    const vehicleNumber = this.escapeHtml(details.vehicleNumber || '-');
+    const driverName = this.escapeHtml(details.driverName || '-');
+    const driverPhone = this.escapeHtml(details.driverPhone || '-');
+    const customerLines = [
+      address ? `<div>${address}</div>` : '<div>No address provided</div>',
+      phone ? `<div>${phone}</div>` : ''
+    ].filter(Boolean).join('');
+    const itemsRows = (b.items || []).map((item, index) => {
+      const qty = Number(item.qty) || 0;
+      const unit = item.unit ? ` ${this.escapeHtml(item.unit)}` : ' pcs';
+      return `
+        <tr>
+          <td>${index + 1}. ${this.escapeHtml(item.name || '')}</td>
+          <td class="qty">${this.escapeHtml(qty.toLocaleString(undefined, { maximumFractionDigits: 2 }))}${unit}</td>
+        </tr>`;
+    }).join('');
+
+    return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waybill</title>
+<style>${this.getA4PrintStyles()}</style>
+</head>
+<body>
+  <div class="screen-actions">
+    <button onclick="window.print()">Print</button>
+    <button class="back-btn" onclick="backToApp()">Back to App</button>
+  </div>
+  <main class="invoice-page waybill-page">
+    <div class="invoice-top-accent"></div>
+    <div class="invoice-dots"></div>
+    <div class="invoice-soft-square"></div>
+    <div class="invoice-bottom-accent"></div>
+    <div class="invoice-corner-soft"></div>
+    <div class="invoice-corner-fill"></div>
+
+    <div class="invoice-content">
+      <h1 class="invoice-title">Waybill</h1>
+      <div class="brand-row">
+        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
+        <div>
+          <div class="brand-name">C Plus</div>
+          <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
+        </div>
+      </div>
+
+      <section class="invoice-party-grid">
+        <div>
+          <h2 class="section-label">Deliver to:</h2>
+          <p class="customer-name">${customer}</p>
+          <div class="customer-lines">${customerLines}</div>
+        </div>
+        <table class="meta-table">
+          <tr><th>Invoice#</th><td>${invoiceNo}</td></tr>
+          <tr><th>Delivery</th><td>${deliveryDate}</td></tr>
+        </table>
+      </section>
+
+      <section class="waybill-info-grid">
+        <div class="waybill-box">
+          <h2 class="waybill-box-title">Vehicle Details</h2>
+          <div class="waybill-detail-row"><strong>Vehicle</strong><span>${vehicleNumber}</span></div>
+        </div>
+        <div class="waybill-box">
+          <h2 class="waybill-box-title">Driver Details</h2>
+          <div class="waybill-detail-row"><strong>Name</strong><span>${driverName}</span></div>
+          <div class="waybill-detail-row"><strong>Phone</strong><span>${driverPhone}</span></div>
+        </div>
+      </section>
+
+      <table class="invoice-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th class="qty">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${itemsRows || '<tr><td colspan="2">No items</td></tr>'}
+        </tbody>
+      </table>
+
+      <section class="waybill-signature-grid">
+        <div class="waybill-signature-line">Receiver Signature</div>
+        <div class="waybill-signature-line">Receiver Name / Date</div>
+      </section>
+    </div>
+
+    <footer class="invoice-footer">
+      <div class="footer-item"><span class="footer-icon">T</span><span>${this.escapeHtml(this.businessPhone)}</span></div>
+      <div class="footer-item"><span class="footer-icon">A</span><span>${this.escapeHtml(this.businessAddress)}</span></div>
+    </footer>
+  </main>
+  <script>
+    function backToApp() {
+      try { window.close(); } catch (e) {}
+      setTimeout(function () {
+        if (window.opener && !window.opener.closed) {
+          try { window.opener.focus(); } catch (e) {}
+        }
+      }, 120);
+    }
+  <\/script>
+</body>
+</html>`;
+  }
+
+  printWaybill(details = {}) {
+    const b = this.currentBill;
+    if (!b) {
+      alert('No bill selected to create a waybill.');
+      return;
+    }
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      alert('Popup blocked. Please allow popups to print.');
+      return;
+    }
+
+    printWindow.document.open();
+    printWindow.document.write(this.buildWaybillHtml(b, details));
+    printWindow.document.close();
+  }
+
   buildCollectingOrderPrintHtml(order) {
     const o = order || {};
     const dateObj = o.timestamp ? new Date(o.timestamp) : new Date();
@@ -928,7 +1305,7 @@ class ShareManager {
     <div class="invoice-content">
       <h1 class="invoice-title">Order</h1>
       <div class="brand-row">
-        <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
+        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>

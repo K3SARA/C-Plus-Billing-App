@@ -730,7 +730,7 @@ class ReportsView {
           <div class="invoice-content">
             <h1 class="invoice-title">Order</h1>
             <div class="brand-row">
-              <img class="brand-logo" src="./icons/logo.png?v=124" alt="C Plus Technologies Logo">
+              <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
               <div>
                 <div class="brand-name">C Plus</div>
                 <div class="brand-sub">${esc(business.businessName || 'C Plus Tech Pvt Ltd')}</div>
@@ -1534,7 +1534,7 @@ class ReportsView {
     width: 150mm;
     height: 14mm;
     border-bottom-right-radius: 18mm;
-    background: #e87517;
+    background: linear-gradient(90deg, #2d4059 0 72%, #31b9c5 72% 84%, #1978b8 84% 92%, #ef4b9b 92% 97%, #ffd21e 97% 100%);
   }
   .sheet::after {
     content: "";
@@ -1543,7 +1543,7 @@ class ReportsView {
     bottom: 0;
     width: 184mm;
     height: 12mm;
-    background: #e87517;
+    background: linear-gradient(90deg, #2d4059 0 48%, #31b9c5 48% 68%, #1978b8 68% 84%, #ef4b9b 84% 94%, #ffd21e 94% 100%);
   }
   .sheet-content { position: relative; z-index: 2; }
   .center { text-align: center; }

@@ -66,6 +66,7 @@ class Auth {
     }
 
     const loginBtn = document.getElementById('btn-login');
+    const usernameInput = document.getElementById('auth-user');
     const passwordInput = document.getElementById('auth-pass');
     const togglePasswordBtn = document.getElementById('btn-toggle-password');
     const loginError = document.getElementById('login-error') || (() => {
@@ -172,6 +173,15 @@ class Auth {
         }
       }
     });
+
+    const continueOnEnter = (event) => {
+      if (event.key !== 'Enter') return;
+      event.preventDefault();
+      if (!loginBtn.disabled) loginBtn.click();
+    };
+
+    usernameInput?.addEventListener('keydown', continueOnEnter);
+    passwordInput?.addEventListener('keydown', continueOnEnter);
 
     document.getElementById('btn-reset-login').addEventListener('click', async () => {
       const creds = this.getStoredCredentials();

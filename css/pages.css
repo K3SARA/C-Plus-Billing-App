@@ -210,6 +210,18 @@
   resize: vertical;
 }
 
+.waybill-form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .waybill-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .billing-payment-card .split-payment-add {
   min-height: 42px;
   margin: 2px 0 12px;
