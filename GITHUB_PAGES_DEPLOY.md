@@ -8,7 +8,7 @@ Run these commands from this project folder:
 
 ```powershell
 git add index.html receipt-print.html manifest.json sw.js css js icons .github .nojekyll .gitignore GITHUB_PAGES_DEPLOY.md
-git commit -m "Deploy C Plus billing app to GitHub Pages"
+git commit -m "Deploy CEE ONE Billing to GitHub Pages"
 git push -u origin main
 ```
 

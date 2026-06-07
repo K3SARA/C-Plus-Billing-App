@@ -319,7 +319,7 @@ class App {
   async shareBackupFile(file) {
     await navigator.share({
       files: [file],
-      title: 'C Plus Tech Billing Backup',
+      title: 'CEE ONE Tech Billing Backup',
       text: 'Save this backup JSON file to Files or share it to a safe location.'
     });
   }

@@ -1,7 +1,7 @@
 const DB_NAME = 'cashew_billing_db';
 const DB_VERSION = 10;
-const BACKUP_APP_NAME = 'C Plus Tech Billing';
-const LEGACY_BACKUP_APP_NAMES = ['C Plus Billing ', BACKUP_APP_NAME];
+const BACKUP_APP_NAME = 'CEE ONE Tech Billing';
+const LEGACY_BACKUP_APP_NAMES = ['CEE ONE Billing ', BACKUP_APP_NAME];
 
 const Money = (() => {
   const toCents = (value) => {
@@ -1225,7 +1225,7 @@ class Database {
     }
 
     if (payload.app && !LEGACY_BACKUP_APP_NAMES.includes(payload.app)) {
-      throw new Error('This backup is not for C Plus Tech Billing.');
+      throw new Error('This backup is not for CEE ONE Tech Billing.');
     }
 
     const version = Number(payload.schemaVersion || 1);

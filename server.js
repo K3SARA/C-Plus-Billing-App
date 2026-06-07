@@ -26,7 +26,7 @@ function requireBasicAuth(req, res, next) {
   const header = req.headers.authorization || '';
   const [scheme, encoded] = header.split(' ');
   if (scheme !== 'Basic' || !encoded) {
-    res.set('WWW-Authenticate', 'Basic realm="C Plus Billing"');
+    res.set('WWW-Authenticate', 'Basic realm="CEE ONE Billing"');
     res.status(401).send('Authentication required.');
     return;
   }
@@ -36,7 +36,7 @@ function requireBasicAuth(req, res, next) {
   const user = splitAt >= 0 ? decoded.slice(0, splitAt) : '';
   const pass = splitAt >= 0 ? decoded.slice(splitAt + 1) : '';
   if (user !== expectedUser || pass !== expectedPass) {
-    res.set('WWW-Authenticate', 'Basic realm="C Plus Billing"');
+    res.set('WWW-Authenticate', 'Basic realm="CEE ONE Billing"');
     res.status(401).send('Invalid credentials.');
     return;
   }
@@ -158,7 +158,7 @@ app.get(/^(?!\/api\/).*/, (_req, res) => {
 async function start() {
   await initStore();
   const server = app.listen(port, () => {
-    console.log(`C Plus app running on port ${port}`);
+    console.log(`CEE ONE app running on port ${port}`);
   });
 
   const shutdown = async () => {
