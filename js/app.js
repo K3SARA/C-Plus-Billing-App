@@ -4,6 +4,7 @@ class App {
     this.isReady = false;
     this.sideMenuExpanded = false;
     this.sideMenuTouched = false;
+    this.deferredInstallPrompt = null;
   }
 
   async init() {
@@ -32,6 +33,7 @@ class App {
     if (window.clearInputs) window.clearInputs.init();
     this.bindSideMenu();
     this.bindNumberInputWheelGuard();
+    this.bindPwaInstaller();
     this.bindBackupButtons();
     this.updateBackupReminder();
     this.isReady = true;
@@ -136,6 +138,65 @@ class App {
 
       event.preventDefault();
     }, { capture: true, passive: false });
+  }
+
+  bindPwaInstaller() {
+    if (this.pwaInstallerBound) return;
+    this.pwaInstallerBound = true;
+
+    document.querySelectorAll('.js-install-app').forEach((button) => {
+      if (button.dataset.installBound === '1') return;
+      button.dataset.installBound = '1';
+      button.addEventListener('click', () => this.installPwa());
+    });
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      this.deferredInstallPrompt = event;
+      this.updateInstallButtons();
+    });
+
+    window.addEventListener('appinstalled', () => {
+      this.deferredInstallPrompt = null;
+      this.updateInstallButtons();
+    });
+
+    this.updateInstallButtons();
+  }
+
+  updateInstallButtons() {
+    const showInstall = !this.isStandalonePwa()
+      && (Boolean(this.deferredInstallPrompt) || this.isIosDevice());
+
+    document.querySelectorAll('.js-install-app').forEach((button) => {
+      button.classList.toggle('hidden', !showInstall);
+    });
+  }
+
+  async installPwa() {
+    if (this.isStandalonePwa()) {
+      this.updateInstallButtons();
+      return;
+    }
+
+    if (this.deferredInstallPrompt) {
+      const promptEvent = this.deferredInstallPrompt;
+      this.deferredInstallPrompt = null;
+      promptEvent.prompt();
+
+      try {
+        await promptEvent.userChoice;
+      } catch (error) {
+        console.warn('PWA install prompt finished without a choice.', error);
+      }
+
+      this.updateInstallButtons();
+      return;
+    }
+
+    if (this.isIosDevice()) {
+      alert('To install on iPhone or iPad, tap Share, then Add to Home Screen.');
+    }
   }
 
   isWideLayout() {

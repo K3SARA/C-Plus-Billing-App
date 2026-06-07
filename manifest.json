@@ -1,16 +1,25 @@
 {
-  "name": "C Plus Tech Billing",
-  "short_name": "C Plus Tech",
+  "name": "C ONE Billing",
+  "short_name": "C ONE",
   "description": "Offline-first billing, stock, and customer dues app for a tech shop.",
-  "start_url": "./",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0a84ff",
+  "theme_color": "#2d4059",
   "icons": [
+    {
+      "src": "./icons/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "./icons/logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }

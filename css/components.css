@@ -48,6 +48,11 @@
   font-size: 0.82rem;
   font-weight: 800;
 }
+.install-app-header {
+  background: #2d4059;
+  border-color: #2d4059;
+  color: #fff;
+}
 /* Card */
 .card {  background: var(--card-bg);  border-radius: var(--radius-lg);  padding: var(--spacing-5);  margin: var(--spacing-4) var(--spacing-5);  box-shadow: var(--shadow-subtle);  transition: transform var(--transition-fast); }
 /* Inputs */
@@ -100,6 +105,13 @@
 }
 .btn-secondary.hidden {
   display: none;
+}
+.install-app-btn {
+  width: 100%;
+  margin: 14px 0 0;
+  border-color: rgba(49, 185, 197, 0.5);
+  color: #2d4059;
+  font-weight: 800;
 }
 /* Quantity Control */
 .quantity-control {  display: flex;  align-items: center;  justify-content: space-between;  background: var(--bg-color);  border-radius: var(--radius-md);  padding: var(--spacing-1);  border: 1px solid rgba(0,0,0,0.1); }

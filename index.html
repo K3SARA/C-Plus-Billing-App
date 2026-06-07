@@ -6,33 +6,33 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>C Plus Tech Billing</title>
-    <meta name="theme-color" content="#ffffff" />
+    <title>C ONE Billing</title>
+    <meta name="theme-color" content="#2d4059" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="C Plus Tech" />
+    <meta name="apple-mobile-web-app-title" content="C ONE" />
 
-    <link rel="manifest" href="./manifest.json?v=130" />
-    <link rel="icon" href="./icons/logo.png?v=130" />
-    <link rel="apple-touch-icon" href="./icons/logo.png?v=130" />
+    <link rel="manifest" href="./manifest.json?v=131" />
+    <link rel="icon" href="./icons/logo.png?v=131" />
+    <link rel="apple-touch-icon" href="./icons/logo.png?v=131" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/variables.css?v=130" />
-    <link rel="stylesheet" href="css/base.css?v=130" />
-    <link rel="stylesheet" href="css/components.css?v=130" />
-    <link rel="stylesheet" href="css/pages.css?v=130" />
+    <link rel="stylesheet" href="css/variables.css?v=131" />
+    <link rel="stylesheet" href="css/base.css?v=131" />
+    <link rel="stylesheet" href="css/components.css?v=131" />
+    <link rel="stylesheet" href="css/pages.css?v=131" />
   </head>
   <body>
     <div id="app">
       <!-- Login Page -->
       <div id="login-page" class="page">
         <div class="logo-container">
-          <img src="icons/logo.png?v=130" alt="C Plus Tech Logo" class="logo" />
-          <h1>C Plus Tech</h1>
+          <img src="icons/logo.png?v=131" alt="C ONE Logo" class="logo" />
+          <h1>C ONE</h1>
           <p style="color: var(--text-muted); margin-top: 8px">
             Billing Desk
           </p>
@@ -113,6 +113,12 @@
           >
             Forgot Password / Reset Login
           </button>
+          <button
+            type="button"
+            class="btn-secondary install-app-btn hidden js-install-app"
+          >
+            Install App
+          </button>
         </div>
       </div>
 
@@ -120,10 +126,16 @@
       <div id="billing-page" class="page">
         <header class="top-header">
           <h1>
-            <img src="icons/logo.png?v=130" alt="C Plus Tech Logo" class="logo" />
-            C Plus Tech Billing
+            <img src="icons/logo.png?v=131" alt="C ONE Logo" class="logo" />
+            C ONE Billing
           </h1>
           <div class="header-actions">
+            <button
+              type="button"
+              class="header-tool-btn install-app-header hidden js-install-app"
+            >
+              Install
+            </button>
             <button id="btn-quick-backup" class="header-tool-btn">
               Backup
             </button>
@@ -824,10 +836,10 @@
       ></div>
       <nav class="side-nav hidden" id="side-nav" aria-label="Main menu">
         <div class="side-nav-brand">
-          <img src="icons/logo.png?v=130" alt="" class="side-nav-logo" />
+          <img src="icons/logo.png?v=131" alt="" class="side-nav-logo" />
           <div class="side-nav-title">
-            <strong>C Plus</strong>
-            <span>Tech Billing</span>
+            <strong>C ONE</strong>
+            <span>Billing</span>
           </div>
         </div>
         <div class="side-nav-pages">
@@ -1119,25 +1131,25 @@
       </div>
     </div>
 
-    <script src="js/db.js?v=130"></script>
-    <script src="js/remote-sync.js?v=130"></script>
-    <script src="js/auth.js?v=130"></script>
-    <script src="js/billing.js?v=130"></script>
-    <script src="js/history.js?v=130"></script>
-    <script src="js/customers.js?v=130"></script>
-    <script src="js/collection.js?v=130"></script>
-    <script src="js/expenses.js?v=130"></script>
-    <script src="js/pdf.js?v=130"></script>
-    <script src="js/reports.js?v=130"></script>
-    <script src="js/inventory.js?v=130"></script>
-    <script src="js/share.js?v=130"></script>
-    <script src="js/clear-inputs.js?v=130"></script>
-    <script src="js/app.js?v=130"></script>
+    <script src="js/db.js?v=131"></script>
+    <script src="js/remote-sync.js?v=131"></script>
+    <script src="js/auth.js?v=131"></script>
+    <script src="js/billing.js?v=131"></script>
+    <script src="js/history.js?v=131"></script>
+    <script src="js/customers.js?v=131"></script>
+    <script src="js/collection.js?v=131"></script>
+    <script src="js/expenses.js?v=131"></script>
+    <script src="js/pdf.js?v=131"></script>
+    <script src="js/reports.js?v=131"></script>
+    <script src="js/inventory.js?v=131"></script>
+    <script src="js/share.js?v=131"></script>
+    <script src="js/clear-inputs.js?v=131"></script>
+    <script src="js/app.js?v=131"></script>
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
           navigator.serviceWorker
-            .register("./sw.js?v=130")
+            .register("./sw.js?v=131")
             .then((reg) => {
               console.log("SW registered:", reg.scope);
             })

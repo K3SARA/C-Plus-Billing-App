@@ -930,7 +930,7 @@ class ShareManager {
       <h1 class="invoice-title">Invoice</h1>
 
       <div class="brand-row">
-        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
+        <img class="brand-logo" src="./icons/logo.png?v=131" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
@@ -1164,7 +1164,7 @@ class ShareManager {
     <div class="invoice-content">
       <h1 class="invoice-title">Waybill</h1>
       <div class="brand-row">
-        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
+        <img class="brand-logo" src="./icons/logo.png?v=131" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
@@ -1305,7 +1305,7 @@ class ShareManager {
     <div class="invoice-content">
       <h1 class="invoice-title">Order</h1>
       <div class="brand-row">
-        <img class="brand-logo" src="./icons/logo.png?v=130" alt="C Plus Technologies Logo">
+        <img class="brand-logo" src="./icons/logo.png?v=131" alt="C Plus Technologies Logo">
         <div>
           <div class="brand-name">C Plus</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
