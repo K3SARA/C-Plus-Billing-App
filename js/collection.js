@@ -294,7 +294,7 @@ class CollectionPage {
       <div class="brand-row">
         <img class="brand-logo" src="./icons/logo.png?v=131" alt="CEE ONE Technologies Logo">
         <div>
-          <div class="brand-name">C Plus</div>
+          <div class="brand-name">CEE ONE</div>
           <div class="brand-sub">CEE ONE Tech Pvt Ltd</div>
         </div>
       </div>

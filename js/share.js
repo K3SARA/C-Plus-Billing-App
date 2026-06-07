@@ -932,7 +932,7 @@ class ShareManager {
       <div class="brand-row">
         <img class="brand-logo" src="./icons/logo.png?v=131" alt="CEE ONE Technologies Logo">
         <div>
-          <div class="brand-name">C Plus</div>
+          <div class="brand-name">CEE ONE</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
         </div>
       </div>
@@ -1166,7 +1166,7 @@ class ShareManager {
       <div class="brand-row">
         <img class="brand-logo" src="./icons/logo.png?v=131" alt="CEE ONE Technologies Logo">
         <div>
-          <div class="brand-name">C Plus</div>
+          <div class="brand-name">CEE ONE</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
         </div>
       </div>
@@ -1307,7 +1307,7 @@ class ShareManager {
       <div class="brand-row">
         <img class="brand-logo" src="./icons/logo.png?v=131" alt="CEE ONE Technologies Logo">
         <div>
-          <div class="brand-name">C Plus</div>
+          <div class="brand-name">CEE ONE</div>
           <div class="brand-sub">${this.escapeHtml(this.businessName)}</div>
         </div>
       </div>
